@@ -17,7 +17,8 @@ module.exports = function (options) {
         subject: null,
         html: null,
         text: null,
-        smtp: null
+        smtp: null,
+        headers: null,
     });
 
     return through2.obj(function (file, enc, next) {
@@ -35,6 +36,7 @@ module.exports = function (options) {
         var text = options.text || null;
 
         return transporter.sendMail({
+            headers: options.headers,
             from: options.from,
             to: to,
             subject: subject,
