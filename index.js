@@ -23,7 +23,7 @@ module.exports = function (options) {
 
     return through2.obj(function (file, enc, next) {
 
-        var transporter = nodemailer.createTransport("SMTP", options.smtp);
+        var transporter = nodemailer.createTransport(options.smtp);
 
         if (file.isNull()) {
             this.push(file);
