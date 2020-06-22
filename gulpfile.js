@@ -1,5 +1,5 @@
 var mail = require('./')
-var mailInfo = require('./test/mail-info.example')  // private
+var mailInfo = require('./test/mail-info')  // private
 var gulp = require('gulp')
 
 gulp.task('test', function(){
@@ -12,9 +12,8 @@ gulp.task('test', function(){
     .pipe(mail({
       to: mailInfo.to,
       from: mailInfo.from,
-      smtp: mailInfo.smtp, 
-      headers: mailInfo.headers
+      smtp: mailInfo.smtp
     }))
   // blocked after sending
-  // because transporter remained working
+  // becase transporter remained working
 })
