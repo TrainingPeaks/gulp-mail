@@ -12,5 +12,9 @@ module.exports = {
     host: 'smtp.163.com',
     secureConnection: true,
     port: 465
+  },
+  headers: {
+    'x-my-key': 'header value',
+    'x-another-key': 'another value'
   }
 }

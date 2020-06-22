@@ -47,6 +47,10 @@ The HTML body of the email. If not provided, the source file becomes the message
 Type: `String`  
 The plaintext body of the email. If not provided, Nodemailer generates this based on the source file.
 
+##### options.headers
+Type: `Object`  
+Contains additional headers. (See the example below.)
+
 ### Example
 
 Currently, `gulp-mail` takes in piped streams and sends emails via SMTP only.
@@ -73,7 +77,11 @@ gulp.task('mail', function () {
         'bar@gmail.com'
       ],
       from: 'Foo <foo@163.com>',
-      smtp: smtpInfo
+      smtp: smtpInfo,
+      headers: {
+        'x-my-key': 'header value',
+        'x-another-key': 'another value'
+      }
     }));
 });
 ```
