@@ -10,7 +10,7 @@ module.exports = {
       pass: 'example'
     },
     host: 'smtp.163.com',
-    secureConnection: true,
+    secure: true,
     port: 465
   },
   headers: {
